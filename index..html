@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tap Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apni Dukan</title>
+  <meta charset="UTF-8">
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      padding: 15px;
       text-align: center;
-      background: #f2f2f2;
+    }
+    .container {
+      padding: 15px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
     }
     button {
-      font-size: 25px;
-      padding: 20px 40px;
-      margin-top: 20px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
 
-<h1>🔥 Tap Game 🔥</h1>
-<h2>Score: <span id="score">0</span></h2>
-<h3>Time: <span id="time">10</span> sec</h3>
+<header>
+  <h1>Apni Dukan</h1>
+  <p>Kirane ki online shop</p>
+</header>
 
-<button onclick="tap()">TAP ME</button>
+<div class="container">
+  <div class="card">
+    <h3>Aata</h3>
+    <p>₹40 / kg</p>
+    <button>Order</button>
+  </div>
 
-<script>
-let score = 0;
-let time = 10;
-let gameOver = false;
+  <div class="card">
+    <h3>Chawal</h3>
+    <p>₹55 / kg</p>
+    <button>Order</button>
+  </div>
 
-function tap() {
-  if (!gameOver) {
-    score++;
-    document.getElementById("score").innerText = score;
-  }
-}
-
-let timer = setInterval(() => {
-  time--;
-  document.getElementById("time").innerText = time;
-
-  if (time <= 0) {
-    gameOver = true;
-    clearInterval(timer);
-    alert("Game Over! Your Score: " + score);
-  }
-}, 1000);
-</script>
+  <div class="card">
+    <h3>Daal</h3>
+    <p>₹90 / kg</p>
+    <button>Order</button>
+  </div>
+</div>
 
 </body>
 </html>
